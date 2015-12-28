@@ -26,7 +26,7 @@ $block-border-radius: 4px;
 @define-mixin block-bordered {
     padding: $block-indent;
 
-    border: 1px solid #000;
+    /*border: 1px solid #000;*/
     border-radius: $block-border-radius;
     background: white;
 }
@@ -45,6 +45,7 @@ $block-border-radius: 4px;
     &.-grabbing {
         cursor: grabbing;
         transform: rotate(2deg);
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
     }
 
     &.-placeholder {
@@ -60,6 +61,9 @@ $block-border-radius: 4px;
 
 body {
     height: 100vh;
+    padding-bottom: 10px;
+    overflow-y: hidden;
+    letter-spacing: 0.02em;
 }
 
 .kanban-board {
@@ -97,6 +101,8 @@ body {
 
     max-height: 100%;
 
+    background: color(white b(20%));
+
     > .header {
         font-weight: bold;
         cursor: pointer;
@@ -116,6 +122,7 @@ body {
     > .add {
         cursor: pointer;
         flex-shrink: 0;
+        padding-top: 10px;
     }
 }
 
@@ -128,6 +135,8 @@ body {
     @mixin block-bordered;
     @mixin block-grab;
     @mixin block-click;
+
+    /*border: none;*/
 }
 
 .new-kanban-card-form {
